@@ -4,7 +4,6 @@
       <tab-bar-items path="/home" >
         <!-- 这里想向子组件传递的就是/home,所以不用加v-bind -->
         <!-- src="~assets/img/tarbar/home.png" 这里是在webpack.base.conf.js中为assets文件夹起了个别名 -->
-        <!-- 现在版本在dom中使用别名不用加~ -->
         <img slot="icon" src="~assets/img/tarbar/home.png" alt="" />
         <img
           slot="icon_active"
@@ -45,11 +44,11 @@
 </template>
 
 <script>
-import TabBar from "../common/tabbar.vue";
-import TabBarItems from "../common/tabbar-items.vue";
+import TabBar from "../common/tarbar/tabbar.vue";
+import TabBarItems from "../common/tarbar/tabbar-items.vue";
 
 export default {
-  name:'mainTabbar',
+  name:'MainTabbar',
   components: {
     TabBar,
     TabBarItems,
