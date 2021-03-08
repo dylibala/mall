@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <main-tabber></main-tabber>
+    <main-tabbar></main-tabbar>
   </div>
 </template>
 
 <script>
-import MainTabber from './components/content/mainTabbar'
+import MainTabbar from 'components/content/MainTabbar/MainTabbar'
 
 export default {
   name: 'App',
   components: {
-    MainTabber
+    MainTabbar
   }
 }
 </script>
 
 <style>
-  @import "./assets/css/base.css"
+  @import "assets/css/base.css"
 </style>

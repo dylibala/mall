@@ -25,7 +25,7 @@ export default {
   display: flex;
   text-align: center;
   font-size: 14px;
-  padding: 10px;
+  padding: 15px;
   border-bottom: 5px solid #edeced
 }
 #home-recommends a{
