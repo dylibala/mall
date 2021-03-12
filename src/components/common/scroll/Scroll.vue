@@ -46,6 +46,14 @@ export default {
       console.log('上拉')
       this.$emit('pullingUp')
     })
+  },
+  methods: {
+    refresh() {
+      //console.log(this);
+
+      this.bscroll && this.bscroll.refresh()
+      console.log('------');
+    }
   }
 
 }

@@ -9,3 +9,5 @@ new Vue({
   render: h => h(App),
   router,
 }).$mount('#app')
+
+Vue.prototype.$bus = new Vue()
