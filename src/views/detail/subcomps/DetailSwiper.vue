@@ -2,7 +2,7 @@
   <div>
     <swiper class='detail-swiper'> 
       <swiper-item v-for='(item,index) in topImages' :key='index'>
-        <img :src="item" alt="">
+        <img :src="item">
       </swiper-item>
     </swiper>
   </div>
@@ -24,13 +24,18 @@ export default {
         return []
       }
     }
+  },
+  methods: {
+    /* imgLoad() {
+      this.$bus.$emit('detailImgLoad')
+    } */
   }
 }
 </script>
 
 <style scoped>
 .detail-swiper{
-  height:300px;
+  height:400px;
   overflow:hidden
 } 
 </style>

@@ -50,7 +50,6 @@ export default {
   methods: {
     refresh() {
       //console.log(this);
-
       this.bscroll && this.bscroll.refresh()
       console.log('------');
     }
