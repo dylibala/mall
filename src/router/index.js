@@ -5,6 +5,7 @@ const Home = () => import('../views/home/home.vue')
 const Category = () => import('../views/category/category.vue')
 const Cart = () => import('../views/cart/cart.vue')
 const Mine = () => import('../views/mine/mine.vue')
+const Detail = () => import('../views/detail/detail')
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ const router = new Router({
     {
       path:'/mine',
       component: Mine
+    },
+    {
+      path: '/detail:iid',
+      component: Detail
     }
 ]
 })

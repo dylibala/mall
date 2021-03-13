@@ -117,7 +117,7 @@ export default {
     */
     getHomeMultiData() {
       getHomeMultiData().then((res) => {
-        console.log(res);
+        //console.log(res);
         this.banners = res.data.data.banner.list; //this是created函数中的this，指向当前组件
         this.recommends = res.data.data.recommend.list;
       });
