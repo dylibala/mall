@@ -88,7 +88,7 @@ export default {
   mounted() {
     //图片加载完成的事件监听
     let refresh = this.debounce(this.$refs.scroll.refresh, 500)
-    this.$bus.$on('itemImgLoad',() => {
+    this.$bus.$on('homeImgLoad',() => {
       refresh()
     })
   },
@@ -182,6 +182,7 @@ export default {
     }
   },
 };
+
 </script>
 
 <style scoped>

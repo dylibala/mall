@@ -6,12 +6,12 @@
     </div>
     <div class='shop-info'>
       <div class='shop-info-1'>
-        <span>{{shop.fans}}<br>总销量</span>
+        <span>{{shop.sells | sellsFilter}}<br>总销量</span>
         <span>{{shop.goodsCount}}<br>全部宝贝</span> 
       </div>        
       <div class='shop-info-2'>
         <table class='shop-info-2-table'>
-          <tr v-for='(item, index) in shop.sells' :key='index'>
+          <tr v-for='(item, index) in shop.score' :key='index'>
             <td>{{item.name}}</td>
             <td :class='{scoreIsBetter:item.isBetter, scoreNotBetter:!item.isBetter}'>{{item.score}}</td>
             <td><span :class='{textIsBetter:item.isBetter, textNotBetter:!item.isBetter}'>{{item.isBetter? '高' : '低'}}</span></td>
@@ -31,8 +31,15 @@ export default {
       default() {
         return {}
       }
+    } 
+  },
+  filters: {
+      sellsFilter(value) {
+        let num = value
+        if(value > 10000) num = (num / 10000).toFixed(1) + '万'
+        return num
+      }
     }
-  }
 }
 </script>
 

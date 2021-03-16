@@ -1,5 +1,5 @@
 <template>
-  <div class='goods-list'>
+  <div class='goods-list' v-if="Object.keys(goodsList).length !== 0">
       <goods-item v-for='(item,index) in goodsList' :key='index' :item='item'>
       </goods-item>
   </div>
@@ -17,7 +17,7 @@ export default {
       default() {
         return []
       }
-    }
+    },
   },
   components: {
     GoodsItem

@@ -9,6 +9,12 @@ export function getDetail(iid) {
   })
 }
 
+export function getCommends() {
+  return request({
+    url: '/recommend'
+  })
+}
+
 export class Goods {
   constructor(itemInfo, columns, shopInfo) {
     this.title = itemInfo.title
@@ -27,15 +33,16 @@ export class Shop {
     this.logo = shopInfo.shopLogo
     this.name = shopInfo.name
     this.fans = shopInfo.cFans
-    this.sells = shopInfo.score
+    this.sells = shopInfo.cSells
     this.goodsCount = shopInfo.cGoods
+    this.score = shopInfo.score
   }  
 }
 
 export class DetailInfo {
   constructor(detailInfo) {
-    this.images = detailInfo.detailImage[0].list
+    this.images = detailInfo.detailImage
     this.desc = detailInfo.desc
-    this.key = detailInfo.detailImage[0].key
   }
 }
+
