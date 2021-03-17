@@ -47,7 +47,11 @@ export default {
     refresh() {
       //console.log(this);
       this.bscroll && this.bscroll.refresh()
-      console.log('------');
+      //console.log('------');
+    },
+
+    scrollTo(x, y, t) {
+      this.bscroll.scrollTo(x, y, t)
     }
   }
 

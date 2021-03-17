@@ -45,7 +45,10 @@ export default {
   height: 40px;
   border-bottom: 2px solid rgba(100, 100, 100, .1)
 }
-
+.info-key {
+  /*当value的数据量比较大的时候, 会挤到key,所以给一个固定的宽度*/
+  width: 95px;
+}
 .info-value{
   color: var(--color-high-text)
 }

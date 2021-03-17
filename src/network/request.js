@@ -8,4 +8,3 @@ export function request(config) {
 
   return axios1(config)
 }
-

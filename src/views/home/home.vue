@@ -38,6 +38,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
 <script>
+//引入组件
 import Navbar from "components/common/navbar/navbar";
 import HomeSwiper from "./subcomps/HomeSwiper";
 import HomeRecommends from "./subcomps/HomeRecommends";
@@ -47,7 +48,11 @@ import GoodsList from "components/content/Goods/GoodsList";
 import Scroll from "components/common/scroll/Scroll";
 import BackTop from "components/common/backtop/BackTop"
 
+//引入网络请求
 import { getHomeMultiData, getHomeGoodsData } from "network/home";
+
+//引入公用函数
+import debounce from 'common/debounce'
 
 export default {
   name: "Home",
@@ -87,7 +92,7 @@ export default {
   },
   mounted() {
     //图片加载完成的事件监听
-    let refresh = this.debounce(this.$refs.scroll.refresh, 500)
+    let refresh = debounce(this.$refs.scroll.refresh, 500)
     this.$bus.$on('homeImgLoad',() => {
       refresh()
     })
@@ -99,19 +104,6 @@ export default {
     },
   },
   methods: {
-    /* 
-      防抖函数    
-    */
-    debounce(func, delay) {
-      let timer = null
-      return function(...args) {
-        if(timer) clearTimeout(timer);
-        timer = setTimeout(() => {
-          func.apply(this, args)
-        },delay)
-      }
-    }, 
-
     /* 
       请求数据相关方法
     */

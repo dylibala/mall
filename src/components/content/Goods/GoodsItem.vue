@@ -3,7 +3,7 @@
       <img :src="imgSrc" @load='imgLoad'/>
       <div class="goods-info">
         <p>{{ item.title }}</p>
-        <span class="price">{{ item.price }}</span>
+        <span class="price">￥{{ item.price }}</span>
         <span class="cfav">{{ item.cfav }}</span>
       </div>
   </div>
@@ -29,7 +29,7 @@ export default {
     imgLoad() {
       if(this.$route.path == '/home') {
         this.$bus.$emit('homeImgLoad')
-      }else if(this.$route.path.indexOf('/detail') != -1) {
+      }else if(this.$route.path == '/detail') {
         this.$bus.$emit('detailImgLoad')
       }
     },
